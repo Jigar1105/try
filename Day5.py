@@ -48,11 +48,13 @@ while True:
     if choice == '2':
         break  
 
-print("\n---- Invoice Details -----")
-print("Invoice Number:", num)
+print("\n----------------Invoice Items----------------")
 print("Customer Name:", name)
+print("Invoice Number:", num)
 print("Phone Number:", Mobilenumber)
-print("\nProducts:")
+print("Product Name\tProduct Price\tProduct Quantity\tItem Total")
 for item in products:
-    print(item)
+    print(f"{item['Product Name']}\t\t{item['Product Price']}\t\t{item['Product Quantity']}\t\t\t{item['Item Total']}")
+print("\n--------------------------------------")
 print("Grand Total:", grand_total)
+print("-----------------------------------------")
