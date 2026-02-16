@@ -76,6 +76,7 @@
 
 
 import random
+import pprint 
 num=random.randint(0,9999)
 name=input("Enter Your Name:")
 Mobilenumber = input("Enter Number: ")
@@ -102,6 +103,15 @@ print("Product Price:",productprice)
 print("Product Quantiti:",productquantiti)
 print("Total Price:",totalprice)
 
+data={
+    productname:{
+        "Product Price":productprice,
+        "Product Quantiti":productquantiti,
+        "Total Price":totalprice
+    }
+}  # empty dictionary
+
+
 while True:
     print("1.Add itme")
     print("2.Exit")
@@ -118,7 +128,7 @@ while True:
         while not productquantiti.isdigit():
             print("Enter a valid number")
             productquantiti=input("Enter Product Quantity:")
-        totalprice=int(productprice)*int(productquantiti)
+        totalprice=int(productprice)*int(productquantiti)+totalprice
 
     elif choice==2:
         break
@@ -133,10 +143,15 @@ while True:
         "total price:",totalprice
     }
 
-    print("Product Name:",productname)
-    print("Product Price:",productprice)
-    print("Product Quantiti:",productquantiti)
-    print("Total Price:",totalprice)
-    print(items)
+    data[productname]=items
+
+print("Product Name:",productname)
+print("Product Price:",productprice)
+print("Product Price:",productprice)
+print("Product Quantiti:",productquantiti)
+print("Total Price:",totalprice)
+pprint.pprint(data)
+
+
 
 
