@@ -27,7 +27,7 @@ def display_invoice(customer_id):
     print("Invoice Number:", customer["invoice_number"])
     print("Customer Name:", customer["customer_name"])
     print("Mobile:", customer["mobile"])
-    print("Grand Total:", customer["grand_total"])
+    
     print("-----------------------")
     print("Items:")
     cursor.execute("SELECT * FROM invoice_items WHERE customer_id=%s", (customer_id,))
@@ -35,6 +35,7 @@ def display_invoice(customer_id):
     for item in items:
         print(f"{item['product_name']} | {item['product_price']} | {item['product_quantity']} | {item['item_total']}")
     print("========================\n")
+    print("Grand Total:", customer["grand_total"])
     conn.close()
 
 # -------- RECALCULATE GRAND TOTAL --------
