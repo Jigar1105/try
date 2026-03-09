@@ -1,23 +1,23 @@
-import pandas as pd
-from tabulate import tabulate
+# import pandas as pd
+# from tabulate import tabulate
 
-mydataset = {
-  'cars': ["BMW", "Volvo", "Ford"],
-  'passings': [3, 7, 2]
-}
+# mydataset = {
+#   'cars': ["BMW", "Volvo", "Ford"],
+#   'passings': [3, 7, 2]
+# }
 
-df = pd.DataFrame(mydataset)
+# df = pd.DataFrame(mydataset)
 
-# Full DataFrame
-print(tabulate(df, headers='keys', tablefmt='psql'))
+# # Full DataFrame
+# print(tabulate(df, headers='keys', tablefmt='psql'))
 
-# Single row (correct way)
-print("\nSingle Row:")
-print(tabulate(df.loc[[1]], headers='keys', tablefmt='psql'))
+# # Single row (correct way)
+# print("\nSingle Row:")
+# print(tabulate(df.loc[[1]], headers='keys', tablefmt='psql'))
 
-# Multiple rows
-print("\nMultiple Rows:")
-print(tabulate(df.loc[[1,2]], headers='keys', tablefmt='psql')) 
+# # Multiple rows
+# print("\nMultiple Rows:")
+# print(tabulate(df.loc[[1,2]], headers='keys', tablefmt='psql')) 
 
 
 # import pandas as pd
@@ -41,5 +41,5 @@ print(tabulate(df.loc[[1,2]], headers='keys', tablefmt='psql'))
 # print(myvar)
 
 import pandas as pd
-df=pd.read_csv("employee_data.csv")
-print(df)
+df=pd.read_csv("globalAirQuality.csv")
+print(df.nunique())
